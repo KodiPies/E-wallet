@@ -1,7 +1,5 @@
 ﻿using System;
-using System.IO;
-using System.Net.Http;
-using System.Threading.Tasks;
+
 
 
 
@@ -18,20 +16,20 @@ class Inwestycje
 
 class Program
 {
-    static string sciezkaPliku = "inwestycje.txt"; // Ścieżka do pliku z danymi inwestycji
+    static string sciezkaPliku = "inwestycje.txt"; 
 
     static void Main(string[] args)
     {
-        Inwestycje inwestycjeUzytkownika = WczytajInwestycje(); // Wczytaj dane inwestycji z pliku
+        Inwestycje inwestycjeUzytkownika = WczytajInwestycje(); 
 
-        // Wyświetl aktualne inwestycje użytkownika
+        
         Console.WriteLine("Stan Konta: " + inwestycjeUzytkownika.Gotowka + " zł");
         Console.WriteLine("Ilość Złota: " + inwestycjeUzytkownika.Zloto + " gram (Zakupiono: " + inwestycjeUzytkownika.DataZakupuZlota.ToShortDateString() + ")");
         Console.WriteLine("Liczba Akcji: " + inwestycjeUzytkownika.Akcje + " (Zakupiono: " + inwestycjeUzytkownika.DataZakupuAkcji.ToShortDateString() + ")");
         Console.WriteLine("Wartość Nieruchomości: " + inwestycjeUzytkownika.Nieruchomosci + " zł (Zakupiono: " + inwestycjeUzytkownika.DataZakupuNieruchomosci.ToShortDateString() + ")");
         Console.WriteLine();
 
-        // Menu opcji
+        
         Console.WriteLine("Co chcesz zrobić?");
         Console.WriteLine("1. Dodaj nową inwestycję");
         Console.WriteLine("2. Usuń inwestycję");
@@ -65,7 +63,7 @@ class Program
             Console.WriteLine("Niepoprawna opcja.");
         }
 
-        ZapiszInwestycje(inwestycjeUzytkownika); // Zapisz dane inwestycji do pliku
+        ZapiszInwestycje(inwestycjeUzytkownika); 
     }
 
     static void DodajInwestycje(Inwestycje inwestycje)
@@ -88,7 +86,7 @@ class Program
                         inwestycje.Zloto += iloscZlota;
                         inwestycje.DataZakupuZlota = DateTime.Now;
                         Console.WriteLine("Dodano " + iloscZlota + " uncji złota.");
-                        inwestycje.Gotowka -= iloscZlota * 1800; // Odejmujemy wartość złota od gotówki
+                        inwestycje.Gotowka -= iloscZlota * 1800; 
                     }
                     else
                     {
@@ -103,7 +101,7 @@ class Program
                         inwestycje.Akcje += iloscAkcji;
                         inwestycje.DataZakupuAkcji = DateTime.Now;
                         Console.WriteLine("Dodano " + iloscAkcji + " akcji.");
-                        inwestycje.Gotowka -= iloscAkcji * 100; // Odejmujemy wartość akcji od gotówki
+                        inwestycje.Gotowka -= iloscAkcji * 100; 
                     }
                     else
                     {
@@ -118,7 +116,7 @@ class Program
                         inwestycje.Nieruchomosci += wartoscNieruchomosci;
                         inwestycje.DataZakupuNieruchomosci = DateTime.Now;
                         Console.WriteLine("Dodano nieruchomość o wartości " + wartoscNieruchomosci + " zł.");
-                        inwestycje.Gotowka -= wartoscNieruchomosci; // Odejmujemy wartość nieruchomości od gotówki
+                        inwestycje.Gotowka -= wartoscNieruchomosci;
                     }
                     else
                     {
@@ -155,7 +153,7 @@ class Program
                     {
                         inwestycje.Zloto -= iloscZlota;
                         Console.WriteLine("Usunięto " + iloscZlota + " uncji złota.");
-                        inwestycje.Gotowka += iloscZlota * 1800; // Dodajemy wartość złota do gotówki
+                        inwestycje.Gotowka += iloscZlota * 1800; 
                     }
                     else
                     {
@@ -169,7 +167,7 @@ class Program
                     {
                         inwestycje.Akcje -= iloscAkcji;
                         Console.WriteLine("Usunięto " + iloscAkcji + " akcji.");
-                        inwestycje.Gotowka += iloscAkcji * 100; // Dodajemy wartość akcji do gotówki
+                        inwestycje.Gotowka += iloscAkcji * 100; 
                     }
                     else
                     {
@@ -183,7 +181,7 @@ class Program
                     {
                         inwestycje.Nieruchomosci -= wartoscNieruchomosci;
                         Console.WriteLine("Usunięto nieruchomość o wartości " + wartoscNieruchomosci + " zł.");
-                        inwestycje.Gotowka += wartoscNieruchomosci; // Dodajemy wartość nieruchomości do gotówki
+                        inwestycje.Gotowka += wartoscNieruchomosci; 
                     }
                     else
                     {
