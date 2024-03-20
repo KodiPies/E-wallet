@@ -23,7 +23,7 @@ class Program
         Inwestycje inwestycjeUzytkownika = WczytajInwestycje(); 
 
         
-        Console.WriteLine("Stan Konta: " + inwestycjeUzytkownika.Gotowka + " zł");
+        Console.WriteLine("Stan Kontaaaaaaaaaaaaa: " + inwestycjeUzytkownika.Gotowka + " zł");
         Console.WriteLine("Ilość Złota: " + inwestycjeUzytkownika.Zloto + " gram (Zakupiono: " + inwestycjeUzytkownika.DataZakupuZlota.ToShortDateString() + ")");
         Console.WriteLine("Liczba Akcji: " + inwestycjeUzytkownika.Akcje + " (Zakupiono: " + inwestycjeUzytkownika.DataZakupuAkcji.ToShortDateString() + ")");
         Console.WriteLine("Wartość Nieruchomości: " + inwestycjeUzytkownika.Nieruchomosci + " zł (Zakupiono: " + inwestycjeUzytkownika.DataZakupuNieruchomosci.ToShortDateString() + ")");
